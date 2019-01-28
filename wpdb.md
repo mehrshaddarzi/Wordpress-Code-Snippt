@@ -1,4 +1,4 @@
-#### use global default
+#### Use global default
 ```php
 //Use in Function
 global $wpdb;
