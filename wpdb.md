@@ -1,6 +1,4 @@
-<img src="https://s.w.org/style/images/about/WordPress-logotype-standard.png" width="200">
-
-# Wordpress Database (wpdb)
+## Wordpress Database (wpdb)
 
 - [Use global default](#use-global-default)
 - [Get Table Prefix](#get-table-prefix)
@@ -26,6 +24,7 @@
 - [Extra Package](#extra-package)
 - [Reference](#reference)
 
+<br />
 
 ### Use global default
 ```php
