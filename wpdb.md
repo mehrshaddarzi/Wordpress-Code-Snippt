@@ -1,28 +1,32 @@
-### *Wordpress Database (wpdb)*
+### Wordpress Database (wpdb)
 <br />
 
-* [Use Global Object](#Use-global-default)
-* [Get Table Prefix](#Get-Table-Prefix)
-* [Get List Default Table (without prefix)](#Get-List-Default-Table-(without-prefix))
-* [Usage](#usage)
-  * [Actions](#actions)
-  * [Registering a Simple Custom Route](#registering-a-simple-custom-route)
-  * [Registering a Complex Custom Route](#registering-a-complex-custom-route)
-  * [Adding Custom Fields to the Response of Existing Endpoints](#adding-custom-fields-to-the-response-of-existing-endpoints)
-  * [Example Endpoint Schema Implementation](#example-endpoint-schema-implementation)
-  * [Example Endpoint Arguments Implementation](#example-endpoint-arguments-implementation)
-  * [Example Request Handler Implementation](#example-request-handler-implementation)
-  * [Example Field Schema Implementation](#example-field-schema-implementation)
-  * [Example Field Reader Implementation](#example-field-reader-implementation)
-  * [Example Field Updater Implementation](#example-field-updater-implementation)
-  * [Example Formatter Implementation](#example-formatter-implementation)
-* [PSR-7](#psr-7)
-  * [Creating a PSR-7-compliant REST Request](#creating-a-psr-7-compliant-rest-request)
-  * [Creating a PSR-7-compliant REST Response](#creating-a-psr-7-compliant-rest-response)
-  * [Using the PSR-7-compliant HTTP Messages](#using-the-psr-7-compliant-http-messages)
+- [Use global default](#use-global-default)
+- [Get Table Prefix](#get-table-prefix)
+- [Get List Default Table without prefix](#get-list-default-table-without-prefix)
+- [Usage](#usage)
+  * [Get Var](#get-var)
+  * [Get Row](#get-row)
+  * [Get Col](#get-col)
+  * [Get Result](#get-result)
+  * [insert Row](#insert-row)
+  * [Replace Row](#replace-row)
+  * [Update Row](#update-row)
+  * [Delete Row](#delete-row)
+  * [Prepare and General Query](#prepare-and-general-query)
+  * [Clear Cache query](#clear-cache-query)
+  * [Check Last Error](#check-last-error)
+- [Custom Utility](#custom-utility)
+  * [Get List Column From mysql Table](#get-list-column-from-mysql-table)
+  * [Get Column Comment in mysql table](#get-column-comment-in-mysql-table)
+- [Connect To Server](#connect-to-server)
+  * [Connect to Another Server](#connect-to-another-server)
+  * [Connect another WP database and use function](#connect-another-wp-database-and-use-function)
+- [Extra Package](#extra-package)
+- [Reference](#reference)
 
 
-#### Use global default
+### Use global default
 ```php
 //Use in Function
 global $wpdb;
@@ -36,14 +40,14 @@ public function __construct() {
 }
 ```
 
-#### Get Table Prefix
+### Get Table Prefix
 ```php
 global $wpdb;
 echo $wpdb->prefix;
 echo $wpdb->prefix.'inbox';
 ````
 
-#### Get List Default Table (without prefix)
+### Get List Default Table without prefix
 ```php
 global $wpdb;
 
@@ -62,33 +66,7 @@ $wpdb->options
 
 ```
 
-#### Check Last Error
-```php
-//Output the error and add the error to the log
-if($wpdb->last_error !== '') :
-    $wpdb->print_error()
-endif;
-
-// Output the error but do not log it
-function my_print_error(){
-    global $wpdb;
-    if($wpdb->last_error !== '') :
-        $str   = htmlspecialchars( $wpdb->last_result, ENT_QUOTES );
-        $query = htmlspecialchars( $wpdb->last_query, ENT_QUOTES );
-
-        print "<div id='error'>
-        <p class='wpdberror'><strong>WordPress database error:</strong> [$str]<br />
-        <code>$query</code></p>
-        </div>";
-    endif;
-}
-```
-
-#### Connect to Another Server
-```php
-$mydb = new wpdb('username','password','database','localhost');
-$rows = $mydb->get_results("select Name from my_table");
-```
+### Usage
 
 #### Get Var
 ```php
@@ -213,6 +191,30 @@ $wpdb->flush();
 //This clears $wpdb->last_result, $wpdb->last_query, and $wpdb->col_info.
 ```
 
+#### Check Last Error
+```php
+//Output the error and add the error to the log
+if($wpdb->last_error !== '') :
+    $wpdb->print_error()
+endif;
+
+// Output the error but do not log it
+function my_print_error(){
+    global $wpdb;
+    if($wpdb->last_error !== '') :
+        $str   = htmlspecialchars( $wpdb->last_result, ENT_QUOTES );
+        $query = htmlspecialchars( $wpdb->last_query, ENT_QUOTES );
+
+        print "<div id='error'>
+        <p class='wpdberror'><strong>WordPress database error:</strong> [$str]<br />
+        <code>$query</code></p>
+        </div>";
+    endif;
+}
+```
+
+### Custom Utility
+
 #### Get List Column From mysql Table
 ```php
 //First a mini query to database
@@ -253,7 +255,15 @@ return $field_comment[0];
 }
 ```
 
-#### Connect another WP database and use function e.g : WP_Query
+### Connect To Server
+
+#### Connect to Another Server
+```php
+$mydb = new wpdb('username','password','database','localhost');
+$rows = $mydb->get_results("select Name from my_table");
+```
+
+#### Connect another WP database and use function
 ```php
 function connect_to_site_DB(){
   global $wpdb;
@@ -303,11 +313,13 @@ if(!empty($sitenews->posts)) {
 $wpdb = $wpdb_backup;
 ```
 
-#### Extra Package
+
+### Extra Package
 
 | Package Name  |  Description |  Link  |
 |---|---|---|
 |  wp-activerecord |  Usign wpdb with Active Recoerd |  https://github.com/friedolinfoerder/wp-activerecord |
 |  wp-eloquent | Eloquent ORM for WordPress  | https://github.com/tareq1988/wp-eloquent  |
 
-
+### Reference
+https://codex.wordpress.org/Class_Reference/wpdb
