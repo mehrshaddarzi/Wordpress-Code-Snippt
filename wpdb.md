@@ -1,5 +1,5 @@
 ### Wordpress Database (wpdb)
-<br />
+<img src="https://s.w.org/style/images/about/WordPress-logotype-standard.png" width="200">
 
 - [Use global default](#use-global-default)
 - [Get Table Prefix](#get-table-prefix)
