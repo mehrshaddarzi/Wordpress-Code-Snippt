@@ -1,3 +1,25 @@
+## Wordpress Database (wpdb)
+
+* [Use Global Object](#Use-global-default)
+  * [Requirements](#requirements)
+* [Usage](#usage)
+  * [Actions](#actions)
+  * [Registering a Simple Custom Route](#registering-a-simple-custom-route)
+  * [Registering a Complex Custom Route](#registering-a-complex-custom-route)
+  * [Adding Custom Fields to the Response of Existing Endpoints](#adding-custom-fields-to-the-response-of-existing-endpoints)
+  * [Example Endpoint Schema Implementation](#example-endpoint-schema-implementation)
+  * [Example Endpoint Arguments Implementation](#example-endpoint-arguments-implementation)
+  * [Example Request Handler Implementation](#example-request-handler-implementation)
+  * [Example Field Schema Implementation](#example-field-schema-implementation)
+  * [Example Field Reader Implementation](#example-field-reader-implementation)
+  * [Example Field Updater Implementation](#example-field-updater-implementation)
+  * [Example Formatter Implementation](#example-formatter-implementation)
+* [PSR-7](#psr-7)
+  * [Creating a PSR-7-compliant REST Request](#creating-a-psr-7-compliant-rest-request)
+  * [Creating a PSR-7-compliant REST Response](#creating-a-psr-7-compliant-rest-response)
+  * [Using the PSR-7-compliant HTTP Messages](#using-the-psr-7-compliant-http-messages)
+
+
 #### Use global default
 ```php
 //Use in Function
