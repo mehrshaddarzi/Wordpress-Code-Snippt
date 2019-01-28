@@ -3,7 +3,7 @@
 
 ### Wordpress Code Snippet
 
-If you are a WordPress Developer, You can use all of these pieces quickly while you're doing. :)
+If you are a WordPress Developer, You can use all of these Code Snippet quickly while you're doing. :)
 
 <br />
 
@@ -19,8 +19,8 @@ If you are a WordPress Developer, You can use all of these pieces quickly while 
 
 #### Contact Me
 ```php
-$name = 'Mehrshad Darzi';
-$email = 'realwp.ir@gmail.com';
+$user = get_user_by( 'email', 'realwp.ir@gmail.com' );
+echo $user->first_name . ' ' . $user->last_name; //Mehrshad Darzi
 ```
 
 
