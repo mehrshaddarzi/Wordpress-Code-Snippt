@@ -9,7 +9,7 @@ If you are a WordPress Developer, You can use all of these Code Snippet quickly 
 
 |  Name |  Description |
 |---|---|
-| [wpdb](https://github.com/mehrshaddarzi/Wordpress/blob/master/wpdb.md)  |  Connecting to wordpress database and use query to mysql |
+| [wpdb](https://github.com/mehrshaddarzi/Wordpress/blob/master/wpdb.md)  |  wordpress database (wpdb) and query to mysql |
 
 <br />
 
