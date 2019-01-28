@@ -78,7 +78,7 @@ foreach($postids as $id) {
 
 #### Get Result
 ```php
-$query = $wpdb->get_results( "SELECT ID, post_title FROM $wpdb->posts WHERE post_status = 'draft' AND post_author = 5", ARRAY_A);
+$query = $wpdb->get_results( "SELECT ID, post_title FROM $wpdb->posts WHERE ...", ARRAY_A);
 foreach ( $query as $row ) 
 {
   setup_postdata( $row );
@@ -168,6 +168,46 @@ $wpdb->query(
 ```php
 $wpdb->flush();
 //This clears $wpdb->last_result, $wpdb->last_query, and $wpdb->col_info.
+```
+
+#### Get List Column From mysql Table
+```php
+//First a mini query to database
+global $wpdb;
+$query = $wpdb->get_results( "SELECT * FROM `wp_posts` LIMIT 1");
+
+//Get list of Column
+$list = $wpdb->get_col_info('name');
+
+//Flush at all
+$wpdb->flush();
+
+//Export the Top Code
+Array
+(
+    [0] => ID
+    [1] => post_author
+    [2] => post_date
+    [3] => post_date_gmt
+    [4] => post_content
+    [5] => post_title
+    [6] => post_excerpt
+    ...
+)
+
+
+//For Get Column name by Number Using
+echo $wpdb->get_col_info('name', 2); //post_date
+
+```
+
+#### Get Column Comment in mysql table
+```php
+function wp_get_col_comment( $table_name, $column_name ) {
+global $wpdb;
+$field_comment = $wpdb->get_row("SELECT column_comment FROM information_schema.columns WHERE table_name = '`{$table_name}`' AND column_name LIKE '$column_name'", ARRAY_N );
+return $field_comment[0];
+}
 ```
 
 #### Get List Default Table (without prefix)
