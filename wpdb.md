@@ -278,3 +278,12 @@ if(!empty($sitenews->posts)) {
 //Here we close the connection
 $wpdb = $wpdb_backup;
 ```
+
+#### Extra Package
+
+| Package Name  |  Description |  Link  |
+|---|---|---|
+|  wp-activerecord |  Usign wpdb with Active Recoerd |  https://github.com/friedolinfoerder/wp-activerecord |
+|  wp-eloquent | Eloquent ORM for WordPress  | https://github.com/tareq1988/wp-eloquent  |
+
+
