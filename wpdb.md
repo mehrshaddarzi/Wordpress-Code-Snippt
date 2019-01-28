@@ -1,7 +1,9 @@
-## Wordpress Database (wpdb)
+### *Wordpress Database (wpdb)*
+<br />
 
 * [Use Global Object](#Use-global-default)
-  * [Requirements](#requirements)
+* [Get Table Prefix](#Get-Table-Prefix)
+* [Get List Default Table (without prefix)](#Get-List-Default-Table-(without-prefix))
 * [Usage](#usage)
   * [Actions](#actions)
   * [Registering a Simple Custom Route](#registering-a-simple-custom-route)
@@ -40,6 +42,25 @@ global $wpdb;
 echo $wpdb->prefix;
 echo $wpdb->prefix.'inbox';
 ````
+
+#### Get List Default Table (without prefix)
+```php
+global $wpdb;
+
+$wpdb->posts
+$wpdb->postmeta
+$wpdb->comments
+$wpdb->commentmeta
+$wpdb->termmeta
+$wpdb->terms
+$wpdb->term_taxonomy
+$wpdb->term_relationships
+$wpdb->users
+$wpdb->usermeta
+$wpdb->links
+$wpdb->options
+
+```
 
 #### Check Last Error
 ```php
@@ -230,25 +251,6 @@ global $wpdb;
 $field_comment = $wpdb->get_row("SELECT column_comment FROM information_schema.columns WHERE table_name = '`{$table_name}`' AND column_name LIKE '$column_name'", ARRAY_N );
 return $field_comment[0];
 }
-```
-
-#### Get List Default Table (without prefix)
-```php
-global $wpdb;
-
-$wpdb->posts
-$wpdb->postmeta
-$wpdb->comments
-$wpdb->commentmeta
-$wpdb->termmeta
-$wpdb->terms
-$wpdb->term_taxonomy
-$wpdb->term_relationships
-$wpdb->users
-$wpdb->usermeta
-$wpdb->links
-$wpdb->options
-
 ```
 
 #### Connect another WP database and use function e.g : WP_Query
