@@ -17,7 +17,7 @@
   * [Check Last Error](#check-last-error)
 - [Hook](#hook)
   * [Query Filter](#query-filter)
-    + [example-> mysql insert ignore](#example---mysql-insert-ignore)
+    + [mysql insert ignore](#mysql-insert-ignore)
 - [Custom Utility](#custom-utility)
   * [Save Query for Debug](#save-query-for-debug)
   * [Get List Column From mysql Table](#get-list-column-from-mysql-table)
@@ -228,7 +228,7 @@ function funxtion_name( $query ) {
 }
 ```
 
-##### example-> mysql insert ignore
+##### mysql insert ignore
 ```php
 //Mysql Ignore insert
 function wp_ignore_insert( $query ) {
