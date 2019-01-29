@@ -1,7 +1,7 @@
 
 ## Wordpress Code Snippets
 
-If you are a WordPress developer,For coding speed, use the code snippets here
+If you are a WordPress developer, For coding speed, use the code snippets here ✌️
 
 <img src="https://s.w.org/style/images/about/WordPress-logotype-standard.png" width="500">
 
