@@ -224,8 +224,9 @@ function my_print_error(){
 
 #### Query Filter
 ```php
-add_filter('query', function_name');
-function funxtion_name( $query ) {
+add_filter('query', 'function_name');
+function function_name( $query ) {
+
 	//Do Work
 	return $query;
 }
