@@ -1,8 +1,9 @@
 ## Wordpress Database (wpdb)
 
 - [Use global default](#use-global-default)
-- [Get Table Prefix](#get-table-prefix)
-- [Get List Default Table without prefix](#get-list-default-table-without-prefix)
+- [Table Prefix](#table-prefix)
+  * [Get Table Prefix](#get-table-prefix)
+  * [Get List Default Table without prefix](#get-list-default-table-without-prefix)
 - [Usage](#usage)
   * [Get Var](#get-var)
   * [Get Row](#get-row)
@@ -44,14 +45,16 @@ public function __construct() {
 }
 ```
 
-### Get Table Prefix
+### Table Prefix
+
+#### Get Table Prefix
 ```php
 global $wpdb;
 echo $wpdb->prefix;
 echo $wpdb->prefix.'inbox';
 ````
 
-### Get List Default Table without prefix
+#### Get List Default Table without prefix
 ```php
 global $wpdb;
 
