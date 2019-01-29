@@ -15,7 +15,10 @@
   * [Prepare and General Query](#prepare-and-general-query)
   * [Clear Cache query](#clear-cache-query)
   * [Check Last Error](#check-last-error)
+- [Hook](#hook)
+  * [Query Filter](#query-filter)
 - [Custom Utility](#custom-utility)
+  * [Save Query for Debug](#save-query-for-debug)
   * [Get List Column From mysql Table](#get-list-column-from-mysql-table)
   * [Get Column Comment in mysql table](#get-column-comment-in-mysql-table)
 - [Connect To Server](#connect-to-server)
@@ -213,7 +216,48 @@ function my_print_error(){
 }
 ```
 
+### Hook
+
+#### Query Filter
+```php
+add_filter('query', function_name');
+function funxtion_name( $query ) {
+	//Do Work
+	return $query;
+}
+
+//Mysql Ignore insert
+function wp_ignore_insert( $query ) {
+	$count = 0;
+	$query = preg_replace( '/^(INSERT INTO)/i', 'INSERT IGNORE INTO', $query, 1, $count );
+	return $query;
+}
+
+add_filter( 'query', 'wp_ignore_insert', 10 );
+$wpdb->insert(
+$wpdb->prefix . 'table',
+array(
+	'name' => '',
+),
+array( '%s' )
+);
+remove_filter( 'query', 'wp_ignore_insert', 10 );
+
+```
+
 ### Custom Utility
+
+#### Save Query for Debug
+```php
+//First, put this in wp-config.php:
+define( 'SAVEQUERIES', true );
+
+//Then in the footer of your theme put this:
+global $wpdb;
+echo "<pre>";
+print_r( $wpdb->queries );
+echo "</pre>";
+```
 
 #### Get List Column From mysql Table
 ```php
@@ -312,7 +356,6 @@ if(!empty($sitenews->posts)) {
 //Here we close the connection
 $wpdb = $wpdb_backup;
 ```
-
 
 ### Extra Package
 
