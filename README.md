@@ -5,8 +5,7 @@ If you are a WordPress Developer, You can use all of these Code Snippet quickly 
 
 <img src="https://s.w.org/style/images/about/WordPress-logotype-standard.png" width="500">
 
-
-<br />
+### API
 
 |  Name |  Description |
 |---|---|
