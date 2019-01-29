@@ -14,6 +14,7 @@
   * [Update Row](#update-row)
   * [Delete Row](#delete-row)
   * [Prepare and General Query](#prepare-and-general-query)
+    + [esc_like](#esc-like)
   * [Clear Cache query](#clear-cache-query)
   * [Check Last Error](#check-last-error)
 - [Hook](#hook)
@@ -194,8 +195,8 @@ $wpdb->query(
 
 ##### esc_like
 ```php
-$wpdb->prepare("SELECT * FROM `{$wpdb->prefix}table` WHERE column_2 LIKE %s",'%' . $wpdb->esc_like($search) . '%'
-);
+
+$wpdb->prepare("SELECT * FROM `{$wpdb->prefix}table` WHERE column_2 LIKE %s",'%' . $wpdb->esc_like($search) . '%');
 
 ```
 
