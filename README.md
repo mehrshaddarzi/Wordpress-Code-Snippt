@@ -1,7 +1,7 @@
 
 ## Wordpress Code Snippets
 
-If you are a WordPress developer, For coding speed, use the code snippets here ✌️
+IF you are a <span style="color:red">WordPress Developer</span>, For coding speed, use the code snippets here ✌️
 
 <img src="https://s.w.org/style/images/about/WordPress-logotype-standard.png" width="500">
 
