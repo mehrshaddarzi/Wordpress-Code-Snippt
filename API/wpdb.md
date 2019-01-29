@@ -193,7 +193,7 @@ $wpdb->query(
 );
 ```
 
-##### esc_like
+##### esc like
 ```php
 
 $wpdb->prepare("SELECT * FROM `{$wpdb->prefix}table` WHERE column_2 LIKE %s",'%' . $wpdb->esc_like($search) . '%');
