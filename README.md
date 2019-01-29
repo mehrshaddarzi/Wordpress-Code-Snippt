@@ -11,6 +11,19 @@ If you are a WordPress Developer, You can use all of these Code Snippet quickly 
 |---|---|
 | [wpdb](https://github.com/mehrshaddarzi/Wordpress/blob/master/API/wpdb.md)  |  wordpress database (wpdb) and query to mysql |
 
+
+### Define
+
+|  Name |  Description |
+|---|---|
+|  |   |
+
+### Admin
+
+|  Name |  Description |
+|---|---|
+|  |   |
+
 <br />
 
 
