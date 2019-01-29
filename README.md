@@ -1,9 +1,10 @@
 
-<img src="https://s.w.org/style/images/about/WordPress-logotype-standard.png" width="500">
-
 ## Wordpress Code Snippets
 
 If you are a WordPress Developer, You can use all of these Code Snippet quickly while you're doing. :)
+
+<img src="https://s.w.org/style/images/about/WordPress-logotype-standard.png" width="500">
+
 
 <br />
 
