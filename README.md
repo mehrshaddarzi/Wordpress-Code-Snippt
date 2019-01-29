@@ -1,7 +1,7 @@
 
 ## Wordpress Code Snippets
 
-If you are a WordPress Developer, You can use all of these Code Snippet quickly while you're doing. :)
+If you are a WordPress developer,For coding speed, use the code snippets here
 
 <img src="https://s.w.org/style/images/about/WordPress-logotype-standard.png" width="500">
 
