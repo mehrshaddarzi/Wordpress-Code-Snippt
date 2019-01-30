@@ -126,12 +126,16 @@ count($query);
 $wpdb->insert( 
 	$wpdb->prefix.'table', 
 	array( 
-		'column1' => 'value1', 
-		'column2' => 123 
+		'title' => sanitize_text_field($_POST['title']), 
+		'date' => current_time('mysql'),
+		'user_id' => get_current_user_id(),
+		'read' => (isset($_POST['checkbox']) ? 1 : 0)
 	), 
 	array( 
 		'%s', 
-		'%d' 
+		'%s',
+		'%d',
+		'%d',
 	) 
 );
 
